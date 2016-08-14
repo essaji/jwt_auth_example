@@ -1,4 +1,4 @@
-# JWT Authentication Example
+# Simple JWT Authentication Example
 
 ## Get it running
 ```
