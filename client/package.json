@@ -1,0 +1,8 @@
+{
+  "name": "simple_authentication_client",
+  "version": "0.0.1",
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "jquery": "^3.1.0"
+  }
+}

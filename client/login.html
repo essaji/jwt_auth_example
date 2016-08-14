@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <script src="node_modules/jquery/dist/jquery.min.js" ></script>
+</head>
+<body>
+
+<form id="loginForm" action="/login" method="post" >
+    <labe>Username: </labe><br>
+    <input type="text" placeholder="Enter username" name="username" /><br>
+    <label>Password: </label><br>
+    <input type="password" placeholder="Enter password" name="password" /><br>
+    <button type="submit">Login</button>
+</form>
+<br>
+<label>Username: </label> essa <br>
+<label>Password: </label> pakistan
+
+
+<script>
+    var frm = $("#loginForm");
+    frm.submit(function(e){
+        e.preventDefault();
+
+        $.ajax({
+            url: frm.attr("action"),
+            type: frm.attr("method"),
+            data: frm.serialize(),
+            success: function(data){
+                console.log(data);
+                window.localStorage.setItem("jwt-token",data);
+                window.location.replace("http://localhost:1337");
+            }
+        });
+    })
+</script>
+
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+</head>
+<body>
+<a href="/api" id="view_api" >View API</a>
+
+<script>
+    var token = window.localStorage.getItem("jwt-token");
+    var url = $("#view_api").attr("href");
+    if(token)
+        url = url+"?access_token="+token;
+    $("#view_api").attr("href",url);
+</script>
+</body>
+</html>
